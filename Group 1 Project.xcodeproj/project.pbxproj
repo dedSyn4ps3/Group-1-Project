@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FD6BB722551C1FC0067F4E8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BB712551C1FC0067F4E8 /* main.cpp */; };
+		0FF7589C2551D38F0033D6B3 /* Phone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BB7B2551C6E30067F4E8 /* Phone.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,8 +44,6 @@
 		0FD6BB652551C1FC0067F4E8 = {
 			isa = PBXGroup;
 			children = (
-				0FD6BB7B2551C6E30067F4E8 /* Phone.cpp */,
-				0FD6BB792551C3310067F4E8 /* Phone.h */,
 				0FD6BB702551C1FC0067F4E8 /* Group 1 Project */,
 				0FD6BB6F2551C1FC0067F4E8 /* Products */,
 			);
@@ -63,6 +62,8 @@
 		0FD6BB702551C1FC0067F4E8 /* Group 1 Project */ = {
 			isa = PBXGroup;
 			children = (
+				0FD6BB7B2551C6E30067F4E8 /* Phone.cpp */,
+				0FD6BB792551C3310067F4E8 /* Phone.h */,
 				0FD6BB712551C1FC0067F4E8 /* main.cpp */,
 			);
 			path = "Group 1 Project";
@@ -124,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF7589C2551D38F0033D6B3 /* Phone.cpp in Sources */,
 				0FD6BB722551C1FC0067F4E8 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
