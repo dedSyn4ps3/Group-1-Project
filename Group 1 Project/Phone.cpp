@@ -6,6 +6,7 @@
 //
 
 #include "Phone.h"
+#include <iomanip>
 
 //Define Constructors
 Phone::Phone()
@@ -53,4 +54,16 @@ void Phone::setPrice(double thePrice)
 		price = thePrice;
 	else
 		price = 0.0;
+}
+
+void Phone::displayPhoneData()
+{
+	cout << "<<< DETAILS >>>" << endl;
+
+	cout << "\n\nModel Name: " << model << endl;
+
+	cout << "\n\nModel Year: " << releaseYear << endl;
+
+	cout << fixed << setprecision(2);
+	cout << "\nPhone Price: " << price << endl;
 }

@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -34,4 +35,6 @@ public:
 	
 	double getPrice(){return price;}
 	void setPrice(double thePrice);
+
+	void displayPhoneData();
 };
