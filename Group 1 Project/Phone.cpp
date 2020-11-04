@@ -16,41 +16,41 @@ Phone::Phone()
 	price = 0.0;
 }
 
-Phone::Phone(string model, int releaseYear, double price)
+Phone::Phone(string theModel, int theYear, double thePrice)
 {
 	cout << "[+] Param Phone constructor is now running..." << endl;
-	model = model;
-	releaseYear = releaseYear;
-	price = price;
+	model = theModel;
+	releaseYear = theYear;
+	price = thePrice;
 }
 
 //Define Destructor
 Phone::~Phone(){}
 
 //Define Public Methods (Getters & Setters)
-void Phone::setModel(string model)
+void Phone::setModel(string theModel)
 {
 	// validate the input
-	if (model.length() > 0)
-		model = model;
+	if (theModel.length() > 0)
+		model = theModel;
 	else
 		model = "unknown";
 }
 
-void Phone::setReleaseYear(int releaseYear)
+void Phone::setReleaseYear(int theYear)
 {
 	// validate the input
-	if (releaseYear > 0)
-		releaseYear = releaseYear;
+	if (theYear > 0)
+		releaseYear = theYear;
 	else
 		releaseYear = 0;
 }
 
-void Phone::setPrice(double price)
+void Phone::setPrice(double thePrice)
 {
 	// validate the input
-	if (price > 0.0)
-		price = price;
+	if (thePrice > 0.0)
+		price = thePrice;
 	else
 		price = 0.0;
 }
