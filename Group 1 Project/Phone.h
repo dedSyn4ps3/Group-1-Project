@@ -5,12 +5,6 @@
 //  Created by Ed Rutherford 11/3/20.
 //
 
-#ifndef Phone_h
-#define Phone_h
-
-
-#endif /* Phone_h */
-
 #pragma once
 
 #include <iostream>
@@ -28,7 +22,7 @@ private:
 public:
 	//Constructor and Destructor
 	Phone();
-	Phone(string model, int year, double price);
+	Phone(string model, int releaseYear, double price);
 	~Phone();
 	
 	//Getters and Setters
