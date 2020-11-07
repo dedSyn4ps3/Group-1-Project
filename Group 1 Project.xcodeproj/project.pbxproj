@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0FCF7CF825573658009783E1 /* Plan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plan.h; sourceTree = "<group>"; };
 		0FD6BB6E2551C1FC0067F4E8 /* Group 1 Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Group 1 Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD6BB712551C1FC0067F4E8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0FD6BB792551C3310067F4E8 /* Phone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		0FD6BB702551C1FC0067F4E8 /* Group 1 Project */ = {
 			isa = PBXGroup;
 			children = (
+				0FCF7CF825573658009783E1 /* Plan.h */,
 				0FD6BB7B2551C6E30067F4E8 /* Phone.cpp */,
 				0FD6BB792551C3310067F4E8 /* Phone.h */,
 				0FD6BB712551C1FC0067F4E8 /* main.cpp */,
@@ -95,7 +97,7 @@
 		0FD6BB662551C1FC0067F4E8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					0FD6BB6D2551C1FC0067F4E8 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -247,6 +249,7 @@
 		0FD6BB762551C1FC0067F4E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -255,6 +258,7 @@
 		0FD6BB772551C1FC0067F4E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
