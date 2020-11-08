@@ -10,6 +10,8 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <conio>
+
 #include "Phone.h"
 #include "Plan.h"
 
@@ -182,6 +184,9 @@ int main(int argc, const char * argv[]) {
             cout << "[!] Please make valid selection...";
         }
     } while (*menuPtr != 4);
+
+    cout << "[+] Press any key to continue..." << endl;
+    _getch();
 
     return 0;
 }
