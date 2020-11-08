@@ -10,7 +10,7 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
-#include <conio>
+#include <conio.h>
 
 #include "Phone.h"
 #include "Plan.h"
@@ -27,6 +27,17 @@ bool openFile(fstream& file, string name)
       return false;
    else
       return true;
+}
+
+void showContent(fstream& file)
+{
+    string line;
+
+    while (getline(file, line)) //file >> line
+    {
+        cout << line << endl;
+
+    }
 }
 
 void createPhoneRecord() {
@@ -111,16 +122,7 @@ void readPlanRecord() {
        cout << "[!] File Open Error!" << endl;
 }
 
-void showContent(fstream& file)
-{
-   string line;
-    
-   while (getline(file, line)) //file >> line
-   {
-     cout << line << endl;
-       
-   }
-}
+
 
 void displayComparison()
 {
