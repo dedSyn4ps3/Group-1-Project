@@ -76,7 +76,7 @@ void createPlanRecord() {
     // creates a new file
     file.open(planFile, ios::out | ios::app);
 
-    string name, price;
+    string name, length, price;
 
     cout << "[+] Please provide the following information to update new Plan records >>>";
 
@@ -84,6 +84,10 @@ void createPlanRecord() {
     cin.ignore();
     getline(cin, name);
     file << name << ",";
+
+    cout << "\nEnter Contract Length: ";
+    getline(cin, length);
+    file << length << ",";
     
     cout << "Enter Price: ";
     getline(cin, price);
