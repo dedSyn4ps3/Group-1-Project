@@ -34,7 +34,7 @@ void createPhoneRecord() {
     // creates a new file
     file.open(phoneFile, ios::out | ios::app);
 
-    string name, address, city, state, zip;
+    string name, year, price;
 
     cout << "[+] Please provide the following information to update new Phone records >>>";
 
@@ -44,12 +44,12 @@ void createPhoneRecord() {
     file << name << ",";
     
     cout << "Enter Release Year: ";
-    getline(cin, address);
-    file << address << ",";
+    getline(cin, year);
+    file << year << ",";
     
     cout << "Enter Price: ";
-    getline(cin, city);
-    file << city << endl;
+    getline(cin, price);
+    file << price << endl;
 
     file.close();
 }
@@ -75,7 +75,7 @@ void createPlanRecord() {
     // creates a new file
     file.open(planFile, ios::out | ios::app);
 
-    string name, address, city, state, zip;
+    string name, price;
 
     cout << "[+] Please provide the following information to update new Plan records >>>";
 
@@ -85,8 +85,8 @@ void createPlanRecord() {
     file << name << ",";
     
     cout << "Enter Price: ";
-    getline(cin, city);
-    file << city << endl;
+    getline(cin, price);
+    file << price << endl;
 
     file.close();
 }
