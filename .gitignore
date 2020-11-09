@@ -1,1 +1,9 @@
 .vscode/settings.json
+*.db
+.vs/Group-1-Project/v16/.suo
+*.sqlite
+.vs/Group-1-Project/v16/.suo
+.vs/Group-1-Project/v16/Browse.VC.db
+*.opendb
+.vs/Group Project/v16/Browse.VC.db-wal
+.vs/Group Project/v16/Browse.VC.db-shm

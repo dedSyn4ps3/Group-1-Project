@@ -50,7 +50,7 @@ void createPhoneRecord() {
 
     string name, year, price;
 
-    cout << "[+] Please provide the following information to update new Phone records >>>";
+    cout << "[+] Please provide the following information to update new phone records [+]";
 
     cout << "\nEnter Model Name: ";
     cin.ignore();
@@ -91,7 +91,7 @@ void createPlanRecord() {
 
     string name, length, price;
 
-    cout << "[+] Please provide the following information to update new Plan records >>>";
+    cout << "[+] Please provide the following information to update new Plan records [+]";
 
     cout << "\nEnter Plan Name: ";
     cin.ignore();
@@ -127,25 +127,25 @@ void readPlanRecord() {
 void displayComparison()
 {
    //Our phone prices
-   cout << "[+] Our Prices >>> \n" << endl;
+   cout << "\n[+] OUR PRICES >>> \n" << endl;
    readPhoneRecord();
 
    //Competitors prices
-   cout << "\n[-] Competitors Prices >>> " << endl;
-   cout << "\nModel A: $149.00" << endl;
-   cout << "Model B: $599.00" << endl;
-   cout << "Model C: $875.00" << endl;
+   cout << "\n\n[-] THEIR PRICES >>> " << endl;
+   cout << "\nSamsung Galaxy S20 5G: $1199.00" << endl;
+   cout << "iPhone 12 Pro: $1429.00" << endl;
+   cout << "iPhone 12 Mini: $875.00" << endl;
 
    //Plan prices
    //Our plan prices
-   cout << "[+] Our Plans >>> \n" << endl;
+   cout << "\n[+] OUR PLANS >>> \n" << endl;
    readPlanRecord();
 
    //Competitors prices
-   cout << "\n[-] Competitors Plans >>> " << endl;
-   cout << "\nPlan A: $36.99" << endl;
-   cout << "Plan B: $69.99" << endl;
-   cout << "Plan C: $79.99" << endl;
+   cout << "\n[-] THEIR PLANS >>> " << endl;
+   cout << "\nPay-As-You-Go: $67.99" << endl;
+   cout << "Family Plan: $179.99" << endl;
+   cout << "Unlimited Everything: $89.99" << endl;
 }
 
 int main(int argc, const char * argv[]) {
@@ -159,7 +159,7 @@ int main(int argc, const char * argv[]) {
     {
         cout << "====================================================" << endl;
         cout << "\n[+] Group 1 | Phones & Plans Console Program | >>>";
-        cout << "\n[Please select from the following choices]: \n";
+        cout << "\n\n[PLEASE SELECT FROM THE FOLLOWING CHOICES] \n";
 
         cout << "1. Enter New Phone Model Details (Admins ONLY)\n";
         cout << "2. Enter New Plan Details (Admins ONLY)\n";
