@@ -5,7 +5,7 @@
 //  Created by Ed Rutherford on 11/3/20.
 //
 
-#include "Group 1 Project/Plan.h"
+#include "Plan.h"
 #include <iomanip>
 
 //Define Constructors

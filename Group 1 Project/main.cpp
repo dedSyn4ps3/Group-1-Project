@@ -4,7 +4,7 @@
 //
 //  Created by Ed Rutherford on 11/03/20
 //  Group Members: Josh Morgan, James Finch, Fray Contreras, Marvin Parks
-//  Edited on 11/07/2020
+//  Edited on 11/09/2020
 
 #include <iostream>
 #include <fstream>
@@ -48,8 +48,10 @@ void createPhoneRecord() {
     // creates a new file
     file.open(phoneFile, ios::out | ios::app);
 
-    string name, year, price;         //***Previous way of running the program. Does not use Objects***//
-    Phone phone;                      //***New way of running program, which uses and object of the Phone class***//
+    string name;
+    int year;
+    double price;                     //***Previous way of running the program. Does not use Objects***//
+    Phone phone;                      //***New way of running program, which uses an object of the Phone class***//
 
     cout << "[+] Please provide the following information to update new phone records [+]";
 
@@ -61,12 +63,12 @@ void createPhoneRecord() {
     
     
     cout << "Enter Release Year: ";
-    getline(cin, year);
+    cin >> year;
     phone.setReleaseYear(year);
     file << phone.getReleaseYear() << "\n";
     
     cout << "Enter Price: ";
-    getline(cin, price);
+    cin >> price;
     phone.setPrice(price);
     file << phone.getPrice() << endl;
 
@@ -94,7 +96,9 @@ void createPlanRecord() {
     // creates a new file
     file.open(planFile, ios::out | ios::app);
 
-    string name, length, price;
+    string name;
+    int length;
+    double price;
     Plan plan;                     //Create an object of the Plan class
 
     cout << "[+] Please provide the following information to update new Plan records [+]";
@@ -106,12 +110,12 @@ void createPlanRecord() {
     file << plan.getName() << "\n";
 
     cout << "\nEnter Contract Length: ";
-    getline(cin, length);
+    cin >> length;
     plan.setContractLength(length);
     file << plan.getContractLength() << "\n";
     
     cout << "Enter Price: ";
-    getline(cin, price);
+    cin >> price;
     plan.setPrice(price);
     file << plan.getPrice() << endl;            //Use the public methods for the plan object to set and get attributes
 
