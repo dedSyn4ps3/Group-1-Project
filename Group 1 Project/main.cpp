@@ -48,22 +48,27 @@ void createPhoneRecord() {
     // creates a new file
     file.open(phoneFile, ios::out | ios::app);
 
-    string name, year, price;
+    string name, year, price;         //***Previous way of running the program. Does not use Objects***//
+    Phone phone;                      //***New way of running program, which uses and object of the Phone class***//
 
     cout << "[+] Please provide the following information to update new phone records [+]";
 
     cout << "\nEnter Model Name: ";
     cin.ignore();
     getline(cin, name);
-    file << name << ",";
+    phone.setModel(name);             //Utilizes the Phone class methods to set & get attributes
+    file << phone.getModel() << "\n";
+    
     
     cout << "Enter Release Year: ";
     getline(cin, year);
-    file << year << ",";
+    phone.setReleaseYear(year);
+    file << phone.getReleaseYear() << "\n";
     
     cout << "Enter Price: ";
     getline(cin, price);
-    file << price << endl;
+    phone.setPrice(price);
+    file << phone.getPrice() << endl;
 
     file.close();
 }
@@ -90,21 +95,25 @@ void createPlanRecord() {
     file.open(planFile, ios::out | ios::app);
 
     string name, length, price;
+    Plan plan;                     //Create an object of the Plan class
 
     cout << "[+] Please provide the following information to update new Plan records [+]";
 
     cout << "\nEnter Plan Name: ";
     cin.ignore();
     getline(cin, name);
-    file << name << ",";
+    plan.setName(name);
+    file << plan.getName() << "\n";
 
     cout << "\nEnter Contract Length: ";
     getline(cin, length);
-    file << length << ",";
+    plan.setContractLength(length);
+    file << plan.getContractLength() << "\n";
     
     cout << "Enter Price: ";
     getline(cin, price);
-    file << price << endl;
+    plan.setPrice(price);
+    file << plan.getPrice() << endl;            //Use the public methods for the plan object to set and get attributes
 
     file.close();
 }
@@ -127,22 +136,22 @@ void readPlanRecord() {
 void displayComparison()
 {
    //Our phone prices
-   cout << "\n[+] OUR PRICES >>> \n" << endl;
+   cout << "\n[+] OUR PRICES [+]\n" << endl;
    readPhoneRecord();
 
    //Competitors prices
-   cout << "\n\n[-] THEIR PRICES >>> " << endl;
+   cout << "\n\n[-] THEIR PRICES [-]\n" << endl;
    cout << "\nSamsung Galaxy S20 5G: $1199.00" << endl;
    cout << "iPhone 12 Pro: $1429.00" << endl;
    cout << "iPhone 12 Mini: $875.00" << endl;
 
    //Plan prices
    //Our plan prices
-   cout << "\n[+] OUR PLANS >>> \n" << endl;
+   cout << "\n[+] OUR PLANS [+]\n" << endl;
    readPlanRecord();
 
    //Competitors prices
-   cout << "\n[-] THEIR PLANS >>> " << endl;
+   cout << "\n[-] THEIR PLANS [-]\n" << endl;
    cout << "\nPay-As-You-Go: $67.99" << endl;
    cout << "Family Plan: $179.99" << endl;
    cout << "Unlimited Everything: $89.99" << endl;
@@ -158,7 +167,7 @@ int main(int argc, const char * argv[]) {
     do
     {
         cout << "====================================================" << endl;
-        cout << "\n[+] Group 1 | Phones & Plans Console Program | >>>";
+        cout << "\n<<< [+] Group 1 | Phones & Plans Console Program | [+] >>>";
         cout << "\n\n[PLEASE SELECT FROM THE FOLLOWING CHOICES] \n";
 
         cout << "1. Enter New Phone Model Details (Admins ONLY)\n";
