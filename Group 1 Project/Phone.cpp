@@ -47,13 +47,13 @@ void Phone::setReleaseYear(int theYear)
 		releaseYear = 0;
 }
 
-void Phone::setPrice(double thePrice)
+void Phone::setPrice(string thePrice)
 {
 	// validate the input
-	if (thePrice > 0.0)
+	if (thePrice.length() > 0)
 		price = thePrice;
 	else
-		price = 0.0;
+		price = "$0.00";
 }
 
 void Phone::displayPhoneData()

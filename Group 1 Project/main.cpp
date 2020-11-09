@@ -48,9 +48,9 @@ void createPhoneRecord() {
     // creates a new file
     file.open(phoneFile, ios::out | ios::app);
 
-    string name;
+    string name, price;
     int year;
-    double price;                     //***Previous way of running the program. Does not use Objects***//
+                         //***Previous way of running the program. Does not use Objects***//
     Phone phone;                      //***New way of running program, which uses an object of the Phone class***//
 
     cout << "[+] Please provide the following information to update new phone records [+]";
@@ -59,13 +59,13 @@ void createPhoneRecord() {
     cin.ignore();
     getline(cin, name);
     phone.setModel(name);             //Utilizes the Phone class methods to set & get attributes
-    file << phone.getModel() << "\n";
+    file << phone.getModel() << " | ";
     
     
     cout << "Enter Release Year: ";
     cin >> year;
     phone.setReleaseYear(year);
-    file << phone.getReleaseYear() << "\n";
+    file << phone.getReleaseYear() << " | ";
     
     cout << "Enter Price: ";
     cin >> price;
@@ -96,9 +96,9 @@ void createPlanRecord() {
     // creates a new file
     file.open(planFile, ios::out | ios::app);
 
-    string name;
+    string name, price;
     int length;
-    double price;
+    
     Plan plan;                     //Create an object of the Plan class
 
     cout << "[+] Please provide the following information to update new Plan records [+]";
@@ -107,12 +107,12 @@ void createPlanRecord() {
     cin.ignore();
     getline(cin, name);
     plan.setName(name);
-    file << plan.getName() << "\n";
+    file << plan.getName() << " | ";
 
     cout << "\nEnter Contract Length: ";
     cin >> length;
     plan.setContractLength(length);
-    file << plan.getContractLength() << "\n";
+    file << plan.getContractLength() << " | ";
     
     cout << "Enter Price: ";
     cin >> price;
@@ -145,9 +145,9 @@ void displayComparison()
 
    //Competitors prices
    cout << "\n\n[-] THEIR PRICES [-]\n" << endl;
-   cout << "\nSamsung Galaxy S20 5G: $1199.00" << endl;
-   cout << "iPhone 12 Pro: $1429.00" << endl;
-   cout << "iPhone 12 Mini: $875.00" << endl;
+   cout << "\nSamsung Galaxy S20 5G | 2020 | $1199.00" << endl;
+   cout << "iPhone 12 Pro | 2020 | $1429.00" << endl;
+   cout << "iPhone 12 Mini | 2020 | $875.00" << endl;
 
    //Plan prices
    //Our plan prices

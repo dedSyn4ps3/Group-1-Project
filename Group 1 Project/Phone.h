@@ -16,9 +16,9 @@ using namespace std;
 class Phone
 {
 private:
-	string model;
+	string model, price;
 	int releaseYear;
-	double price;
+	
 
 public:
 	//Constructor and Destructor
@@ -33,8 +33,8 @@ public:
 	int getReleaseYear(){return releaseYear;}
 	void setReleaseYear(int theYear);
 	
-	double getPrice(){return price;}
-	void setPrice(double thePrice);
+	string getPrice(){return price;}
+	void setPrice(string thePrice);
 
 	void displayPhoneData();
 };

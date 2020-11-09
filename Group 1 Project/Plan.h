@@ -3,7 +3,7 @@
 //  Group 1 Project
 //
 //  Created by Ed Rutherford 11/3/20.
-//
+//  Edited on 11/09/2020
 
 #pragma once
 
@@ -16,9 +16,9 @@ using namespace std;
 class Plan
 {
 private:
-  string name;
+  string name, price;
   int contractLength;
-  double price;
+  
 
 public:
   //Constructor and Destructor
@@ -33,8 +33,8 @@ public:
   int getContractLength(){return contractLength;}
   void setContractLength(int theLength);
  
-  double getPrice(){return price;}
-  void setPrice(double thePrice);
+  string getPrice(){return price;}
+  void setPrice(string thePrice);
 
   void displayPlanData();
 };

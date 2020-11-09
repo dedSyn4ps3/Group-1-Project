@@ -47,13 +47,13 @@ void Plan::setContractLength(int theLength)
 		contractLength = 0;
 }
 
-void Plan::setPrice(double thePrice)
+void Plan::setPrice(string thePrice)
 {
 	// validate the input
-	if (thePrice > 0.0)
+	if (thePrice.length() > 0)
 		price = thePrice;
 	else
-		price = 0.0;
+		price = "$0.00";
 }
 
 void Plan::displayPlanData()
