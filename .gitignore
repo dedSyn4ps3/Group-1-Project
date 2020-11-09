@@ -7,3 +7,19 @@
 *.opendb
 .vs/Group Project/v16/Browse.VC.db-wal
 .vs/Group Project/v16/Browse.VC.db-shm
+.vs/Group Project/v16/ipch/AutoPCH/13531d7c5b47590f/PLAN.ipch
+.vs/Group Project/v16/ipch/AutoPCH/bc3268c32b450187/PHONE.ipch
+Release/Group Project.exe.recipe
+Release/Group Project.log
+Release/Group Project.pdb
+Release/Group Project.tlog/CL.command.1.tlog
+Release/Group Project.tlog/CL.read.1.tlog
+Release/Group Project.tlog/CL.write.1.tlog
+Release/Group Project.tlog/Group Project.lastbuildstate
+Release/Group Project.tlog/link.command.1.tlog
+Release/Group Project.tlog/link.read.1.tlog
+Release/Group Project.tlog/link.write.1.tlog
+Release/Group Project.vcxproj.FileListAbsolute.txt
+Release/main.obj
+Release/Phone.obj
+Release/vc142.pdb
