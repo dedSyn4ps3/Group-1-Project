@@ -11,30 +11,28 @@
 #include <string>
 #include <iomanip>
 
+#include "Device.h"
+
 using namespace std;
 
-class Phone
+class Phone : public Device
 {
 private:
-	string model, price;
-	int releaseYear;
-	
+	string plansAvailable;
+	int inventory;
 
 public:
 	//Constructor and Destructor
 	Phone();
-	Phone(string theModel, int theYear, double thePrice);
+	Phone(string thePlans, int theInventory);
 	~Phone();
 	
 	//Getters and Setters
-	string getModel(){return model;}
-	void setModel(string theModel);
+	string getInventory(){return inventory;}
+	void setInventory(string theInventory);
 	
-	int getReleaseYear(){return releaseYear;}
-	void setReleaseYear(int theYear);
+	int getPlansAvailable(){return plansAvailable;}
+	void setPlansAvailable(int thePlans);
 	
-	string getPrice(){return price;}
-	void setPrice(string thePrice);
-
 	void displayPhoneData();
 };

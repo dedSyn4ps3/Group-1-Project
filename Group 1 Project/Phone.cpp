@@ -12,58 +12,43 @@
 Phone::Phone()
 {
 	cout << "[+] Default Phone constructor is running..." << endl;
-	model = "undefined";
-	releaseYear = 0;
-	price = 0.0;
+	plansAvailable = "None";
+	inventory = 0;
 }
 
-Phone::Phone(string theModel, int theYear, double thePrice)
+Phone::Phone(string thePlans, int theInventory)
 {
 	cout << "[+] Param Phone constructor is now running..." << endl;
-	model = theModel;
-	releaseYear = theYear;
-	price = thePrice;
+	plansAvailable = thePlans;
+	inventory = theInventory;
 }
 
 //Define Destructor
 Phone::~Phone(){}
 
 //Define Public Methods (Getters & Setters)
-void Phone::setModel(string theModel)
+void Phone::setInventory(string theInventory)
 {
 	// validate the input
-	if (theModel.length() > 0)
-		model = theModel;
+	if (theInventory > 0)
+		inventory = theInventory;
 	else
-		model = "unknown";
+		inventory = 0;
 }
 
-void Phone::setReleaseYear(int theYear)
+void Phone::setPlansAvailable(int thePlans)
 {
-	// validate the input
-	if (theYear > 0)
-		releaseYear = theYear;
-	else
-		releaseYear = 0;
-}
-
-void Phone::setPrice(string thePrice)
-{
-	// validate the input
-	if (thePrice.length() > 0)
-		price = thePrice;
-	else
-		price = "$0.00";
+	plansAvailable = thePlans;
 }
 
 void Phone::displayPhoneData()
 {
 	cout << "<<< DETAILS >>>" << endl;
 
-	cout << "\n\nModel Name: " << model << endl;
+	cout << "\n\nModel Name: " << getModel() << endl;
 
-	cout << "\n\nModel Year: " << releaseYear << endl;
+	cout << "\n\nModel Year: " << getReleaseYear() << endl;
 
 	cout << fixed << setprecision(2);
-	cout << "\nPhone Price: " << price << endl;
+	cout << "\nPhone Price: " << getPrice() << endl;
 }
