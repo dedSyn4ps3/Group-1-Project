@@ -9,17 +9,15 @@
 #include <iomanip>
 
 //Define Constructors
-Phone::Phone()
+Phone::Phone():Device()
 {
 	cout << "[+] Default Phone constructor is running..." << endl;
-	plansAvailable = "None";
 	inventory = 0;
 }
 
-Phone::Phone(string thePlans, int theInventory)
+Phone::Phone(string phoneModel, int phoneReleaseYear, string phonePrice, int theInventory):Device(phoneModel, phoneReleaseYear, phonePrice)
 {
 	cout << "[+] Param Phone constructor is now running..." << endl;
-	plansAvailable = thePlans;
 	inventory = theInventory;
 }
 
@@ -36,10 +34,6 @@ void Phone::setInventory(int theInventory)
 		inventory = 0;
 }
 
-void Phone::setPlansAvailable(string thePlans)
-{
-	plansAvailable = thePlans;
-}
 
 void Phone::displayPhoneData()
 {

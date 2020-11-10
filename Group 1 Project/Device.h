@@ -21,7 +21,7 @@ private:
 public:
 	//Constructor and Destructor
 	Device();
-	Device(string theModel, int theYear, double thePrice);
+	Device(string theModel, int theYear, string thePrice);
 	~Device();
 	
 	//Getters and Setters

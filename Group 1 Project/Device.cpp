@@ -14,10 +14,10 @@ Device::Device()
 	cout << "[+] Default Device constructor is running..." << endl;
 	model = "undefined";
 	releaseYear = 0;
-	price = 0.0;
+	price = "$0.00";
 }
 
-Device::Device(string theModel, int theYear, double thePrice)
+Device::Device(string theModel, int theYear, string thePrice)
 {
 	cout << "[+] Param Device constructor is now running..." << endl;
 	model = theModel;
@@ -35,7 +35,7 @@ void Device::setModel(string theModel)
 	if (theModel.length() > 0)
 		model = theModel;
 	else
-		model = "unknown";
+		model = "Unknown";
 }
 
 void Device::setReleaseYear(int theYear)
