@@ -55,5 +55,3 @@ void Device::setPrice(string thePrice)
 	else
 		price = "$0.00";
 }
-
-}

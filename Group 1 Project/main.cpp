@@ -50,7 +50,7 @@ void createPhoneRecord() {
 
     string name, price;
     int year;
-                         //***Previous way of running the program. Does not use Objects***//
+                                      //***Previous way of running the program. Does not use Objects***//
     Phone phone;                      //***New way of running program, which uses an object of the Phone class***//
 
     cout << "[+] Please provide the following information to update new phone records [+]";
