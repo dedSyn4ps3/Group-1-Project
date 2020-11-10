@@ -27,7 +27,7 @@ Phone::Phone(string thePlans, int theInventory)
 Phone::~Phone(){}
 
 //Define Public Methods (Getters & Setters)
-void Phone::setInventory(string theInventory)
+void Phone::setInventory(int theInventory)
 {
 	// validate the input
 	if (theInventory > 0)
@@ -36,7 +36,7 @@ void Phone::setInventory(string theInventory)
 		inventory = 0;
 }
 
-void Phone::setPlansAvailable(int thePlans)
+void Phone::setPlansAvailable(string thePlans)
 {
 	plansAvailable = thePlans;
 }

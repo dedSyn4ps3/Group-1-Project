@@ -28,11 +28,11 @@ public:
 	~Phone();
 	
 	//Getters and Setters
-	string getInventory(){return inventory;}
-	void setInventory(string theInventory);
+	int getInventory(){return inventory;}
+	void setInventory(int theInventory);
 	
-	int getPlansAvailable(){return plansAvailable;}
-	void setPlansAvailable(int thePlans);
+	string getPlansAvailable(){return plansAvailable;}
+	void setPlansAvailable(string thePlans);
 	
 	void displayPhoneData();
 };
