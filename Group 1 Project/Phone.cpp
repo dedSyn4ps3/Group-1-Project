@@ -25,14 +25,25 @@ void Phone::setInventory(int theInventory)
 
 void Phone::displayPhoneData()
 {
-	cout << "<<< DETAILS >>>" << endl;
+	cout << "<<< DETAILS >>>\n" << endl;
 
-	cout << "\nModel Name: " << getModel() << endl;
+	//cout << "\nModel Name: " << getModel() << endl;
 
-	cout << "\nModel Year: " << getReleaseYear() << endl;
+	//cout << "\nModel Year: " << getReleaseYear() << endl;
+                                                                        //***Old way of printing data; Not very neat***//
+	//cout << fixed << setprecision(2);
+	//cout << "\nPhone Price: " << getPrice() << endl;
 
-	cout << fixed << setprecision(2);
-	cout << "\nPhone Price: " << getPrice() << endl;
+	//cout << "\n\nCURRENT INVENTORY: " << inventory << endl;
+
+	cout << setw(14) <<"Model Name"
+         << setw(10) << "Model Year" << setw(4)
+         << setw(8) << "Price\n";
+    cout << "-------------------------------------\n";
+
+	cout << setw(14) << getModel();
+    cout << setw(8) << getReleaseYear();
+    cout << setw(7) << getPrice() << endl;
 
 	cout << "\n\nCURRENT INVENTORY: " << inventory << endl;
 }

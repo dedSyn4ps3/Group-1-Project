@@ -11,6 +11,7 @@
 #include <string>
 #include <iomanip>
 #include <conio.h>
+#include <memory>
 
 #include "Phone.h"
 #include "Plan.h"
@@ -147,9 +148,13 @@ void displayComparison()
 
    //Competitors prices
    cout << "\n\n[-] THEIR PRICES [-]\n" << endl;
-   cout << "\nSamsung Galaxy S20 5G | 2020 | $1199.00" << endl;
-   cout << "iPhone 12 Pro | 2020 | $1429.00" << endl;
-   cout << "iPhone 12 Mini | 2020 | $875.00" << endl;
+   //cout << "\nSamsung Galaxy S20 5G | 2020 | $1199.00" << endl;
+   //cout << "iPhone 12 Pro | 2020 | $1429.00" << endl;                    ***This was the old way, not using objects***
+   //cout << "iPhone 12 Mini | 2020 | $875.00" << endl;
+
+   unique_ptr<Phone> iphonePro(new Phone("iPhone 12 Pro", 2020, "$1497.00", 120));
+   unique_ptr<Phone> iphoneMini(new Phone("iPhone 12 Mini", 2020, "$1199.00", 95));
+   unique_ptr<Phone> galaxy(new Phone("Samsung Galaxy S20 5G", 2020, "1199.00", 62));
 
    //Plan prices
    //Our plan prices
