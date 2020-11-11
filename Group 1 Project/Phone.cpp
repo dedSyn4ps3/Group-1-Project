@@ -3,23 +3,11 @@
 //  Group 1 Project
 //
 //  Created by Ed Rutherford on 11/3/20.
-//
+//  Edited 11/10/2020
 
 #include "Phone.h"
 #include <iomanip>
 
-//Define Constructors
-Phone::Phone():Device()
-{
-	cout << "[+] Default Phone constructor is running..." << endl;
-	inventory = 0;
-}
-
-Phone::Phone(string phoneModel, int phoneReleaseYear, string phonePrice, int theInventory):Device(phoneModel, phoneReleaseYear, phonePrice)
-{
-	cout << "[+] Param Phone constructor is now running..." << endl;
-	inventory = theInventory;
-}
 
 //Define Destructor
 Phone::~Phone(){}
@@ -39,10 +27,12 @@ void Phone::displayPhoneData()
 {
 	cout << "<<< DETAILS >>>" << endl;
 
-	cout << "\n\nModel Name: " << getModel() << endl;
+	cout << "\nModel Name: " << getModel() << endl;
 
-	cout << "\n\nModel Year: " << getReleaseYear() << endl;
+	cout << "\nModel Year: " << getReleaseYear() << endl;
 
 	cout << fixed << setprecision(2);
 	cout << "\nPhone Price: " << getPrice() << endl;
+
+	cout << "\n\nCURRENT INVENTORY: " << inventory << endl;
 }

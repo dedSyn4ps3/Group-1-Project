@@ -3,7 +3,7 @@
 //  Group 1 Project
 //
 //  Created by Ed Rutherford on 11/9/20.
-//
+//  Edited 11/10/2020
 
 #include "Device.h"
 #include <iomanip>

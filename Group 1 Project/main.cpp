@@ -4,7 +4,7 @@
 //
 //  Created by Ed Rutherford on 11/03/20
 //  Group Members: Josh Morgan, James Finch, Fray Contreras, Marvin Parks
-//  Edited on 11/09/2020
+//  Edited 11/10/2020
 
 #include <iostream>
 #include <fstream>
@@ -33,7 +33,7 @@ void showContent(fstream& file)
 {
     string line;
 
-    while (getline(file, line)) //file >> line
+    while (getline(file, line)) 
     {
         cout << line << endl;
 
@@ -73,6 +73,8 @@ void createPhoneRecord() {
     file << phone.getPrice() << endl;
 
     file.close();
+
+    phone.displayPhoneData();
 }
 
 void readPhoneRecord() {
