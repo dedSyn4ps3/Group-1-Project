@@ -14,10 +14,10 @@ Plan::Plan()
 	cout << "[+] Default Plan constructor is running..." << endl;
 	name = "undefined";
 	contractLength = 0;
-	price = 0.0;
+	price = "$0.00";
 }
 
-Plan::Plan(string theName, int theLength, double thePrice)
+Plan::Plan(string theName, int theLength, string thePrice)
 {
 	cout << "[+] Param Plan constructor is now running..." << endl;
 	name = theName;

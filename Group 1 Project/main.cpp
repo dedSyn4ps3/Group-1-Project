@@ -4,7 +4,7 @@
 //
 //  Created by Ed Rutherford on 11/03/20
 //  Group Members: Josh Morgan, James Finch, Fray Contreras, Marvin Parks
-//  Edited 11/10/2020
+//  Edited 11/11/2020
 
 #include <iostream>
 #include <fstream>
@@ -149,23 +149,59 @@ void displayComparison()
    //Competitors prices
    cout << "\n\n[-] THEIR PRICES [-]\n" << endl;
    //cout << "\nSamsung Galaxy S20 5G | 2020 | $1199.00" << endl;
-   //cout << "iPhone 12 Pro | 2020 | $1429.00" << endl;                    ***This was the old way, not using objects***
+   //cout << "iPhone 12 Pro | 2020 | $1429.00" << endl;                       //***This was the old way, not using objects***//
    //cout << "iPhone 12 Mini | 2020 | $875.00" << endl;
 
-   unique_ptr<Phone> iphonePro(new Phone("iPhone 12 Pro", 2020, "$1497.00", 120));
-   unique_ptr<Phone> iphoneMini(new Phone("iPhone 12 Mini", 2020, "$1199.00", 95));
-   unique_ptr<Phone> galaxy(new Phone("Samsung Galaxy S20 5G", 2020, "1199.00", 62));
+   Phone *iphonePro = new Phone("iPhone 12 Pro", 2020, "$1497.00", 120);
+   Phone *iphoneMini = new Phone("iPhone 12 Mini", 2020, "$1199.00", 95);
+   Phone *galaxy = new Phone("Samsung Galaxy S20 5G", 2020, "1199.00", 62);   //***New way; Utilizes Class Pointers***//
+
+   cout << setw(18) << "Model Name"
+        << setw(18) << "Model Year" << setw(8)
+        << setw(12) << "Price\n";
+   cout << "------------------------------------------------------\n";
+
+   cout << iphonePro->getModel() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << endl;
+   cout << iphoneMini->getModel() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << endl;
+   cout << galaxy->getModel() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << endl;
 
    //Plan prices
    //Our plan prices
    cout << "\n[+] OUR PLANS [+]\n" << endl;
+
+   cout << setw(18) << "Plan Name"
+        << setw(26) << "Contract Length(Years)" << setw(8)
+        << setw(12)  << "Price\n";
+   cout << "------------------------------------------------------\n";
+   
    readPlanRecord();
 
    //Competitors prices
    cout << "\n[-] THEIR PLANS [-]\n" << endl;
-   cout << "\nPay-As-You-Go: $67.99" << endl;
-   cout << "Family Plan: $179.99" << endl;
-   cout << "Unlimited Everything: $89.99" << endl;
+
+   //cout << "\nPay-As-You-Go: $86.99" << endl;
+   //cout << "Family Plan: $179.99" << endl;                            //***Old way of displaying plans; Does not use object array***//
+   //cout << "Unlimited Everything: $89.99" << endl;
+
+   const int NUM_PLANS = 3;
+   
+   Plan plan[NUM_PLANS] = {                                             //***New way using an object array***//
+       Plan("Pay-As-You-Go", 0, "$86.99"),
+       Plan("Family Unlimited", 2, "$179.99"),
+       Plan("Unlimited Everything", 1, "$89.99") 
+   };
+   
+   cout << setw(18) << "Plan Name"
+        << setw(26) << "Contract Length(Years)" << setw(8)
+        << setw(12) << "Price\n";
+   cout << "-------------------------------------------------------\n";
+
+   for (int i = 0; i < NUM_PLANS; i++)
+   {
+       cout << setw(8) << plan[i].getName();
+       cout << setw(12) << plan[i].getContractLength();
+       cout << setw(7) << plan[i].getPrice() << endl;
+   }
 }
 
 int main(int argc, const char * argv[]) {

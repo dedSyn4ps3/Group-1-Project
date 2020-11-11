@@ -23,7 +23,7 @@ private:
 public:
   //Constructor and Destructor
   Plan();
-  Plan(string theName, int theLength, double thePrice);
+  Plan(string theName, int theLength, string thePrice);
   ~Plan();
  
   //Getters and Setters
