@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <conio.h>
 #include <memory>
+#include <Windows.h>
 
 #include "Phone.h"
 #include "Plan.h"
@@ -20,6 +21,12 @@ using namespace std;
 
 const string phoneFile = "phoneList.csv";
 const string planFile = "planList.csv";
+
+void setColor(unsigned short color)
+{
+    HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hcon, color);
+}
 
 bool openFile(fstream& file, string name)
 {
@@ -224,7 +231,7 @@ int main(int argc, const char * argv[]) {
 
     do
     {
-        cout << "====================================================" << endl;
+        cout << ""; setColor(10); cout << "====================================================" << "";  setColor(7); cout << endl;
         cout << "\n<<< [+] Group 1 | Phones & Plans Console Program | [+] >>>";
         cout << "\n\n[ PLEASE SELECT FROM THE FOLLOWING CHOICES ] \n";
 
