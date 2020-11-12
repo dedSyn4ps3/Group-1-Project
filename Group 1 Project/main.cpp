@@ -50,32 +50,38 @@ void createPhoneRecord() {
     file.open(phoneFile, ios::out | ios::app);
 
     string name, price;
-    int year;
+    int year, inventory;
                                       //***Previous way of running the program. Does not use Objects***//
-    Phone phone;                      //***New way of running program, which uses an object of the Phone class***//
+    unique_ptr<Phone> phone = (new Phone);                      //***New way of running program, which uses a dynamic pointer object of the Phone class***//
 
     cout << "[+] Please provide the following information to update new phone records [+]";
 
     cout << "\nEnter Model Name: ";
     cin.ignore();
     getline(cin, name);
-    phone.setModel(name);             //Utilizes the Phone class methods to set & get attributes
-    file << phone.getModel() << " | ";
+    phone->setModel(name);             //Utilizes the Phone class methods to set & get attributes
+    file << phone->getModel() << "\t";
     
     
     cout << "Enter Release Year: ";
     cin >> year;
-    phone.setReleaseYear(year);
-    file << phone.getReleaseYear() << " | ";
+    phone->setReleaseYear(year);
+    file << phone->getReleaseYear() << "\t";
     
     cout << "Enter Price: ";
     cin >> price;
-    phone.setPrice(price);
-    file << phone.getPrice() << endl;
+    phone->setPrice(price);
+    file << phone->getPrice() << "\t";
+
+    cout << "Enter Inventory: ";
+    cin >> inventory;
+    phone->setInventory(inventory);
+    file << phone->getInventory() << endl;
 
     file.close();
 
-    phone.displayPhoneData();
+    cout << "[+] You entered the following information >>> \n";
+    phone->displayPhoneData();
 }
 
 void readPhoneRecord() {
@@ -110,12 +116,12 @@ void createPlanRecord() {
     cin.ignore();
     getline(cin, name);
     plan.setName(name);
-    file << plan.getName() << " | ";
+    file << plan.getName() << "\t";
 
     cout << "\nEnter Contract Length: ";
     cin >> length;
     plan.setContractLength(length);
-    file << plan.getContractLength() << " | ";
+    file << plan.getContractLength() << "\t";
     
     cout << "Enter Price: ";
     cin >> price;
@@ -158,12 +164,17 @@ void displayComparison()
 
    cout << setw(18) << "Model Name"
         << setw(18) << "Model Year" << setw(8)
-        << setw(12) << "Price\n";
+        << setw(12) << "Price" << setw(8)
+        << setw(18) << "Inventory\n";
    cout << "------------------------------------------------------\n";
 
-   cout << iphonePro->getModel() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << endl;
-   cout << iphoneMini->getModel() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << endl;
-   cout << galaxy->getModel() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << endl;
+   cout << iphonePro->getModel() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << "\t" << iphonePro->getInventory << endl;
+   cout << iphoneMini->getModel() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << "\t" << iphoneMini->getInventory << endl;
+   cout << galaxy->getModel() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << "\t" << galaxy->getInventory << endl;
+
+   delete iphoneMini;
+   delete iphonePro;                   //Clean up the dynamically allocated memory
+   delete galaxy;
 
    //Plan prices
    //Our plan prices
@@ -198,9 +209,9 @@ void displayComparison()
 
    for (int i = 0; i < NUM_PLANS; i++)
    {
-       cout << setw(8) << plan[i].getName();
-       cout << setw(12) << plan[i].getContractLength();
-       cout << setw(7) << plan[i].getPrice() << endl;
+       cout << setw(18) << plan[i].getName();
+       cout << setw(26) << plan[i].getContractLength();
+       cout << setw(13) << plan[i].getPrice() << endl;
    }
 }
 
@@ -244,7 +255,7 @@ int main(int argc, const char * argv[]) {
     } while (*menuPtr != 4);
 
     cout << "[+] Press any key to continue..." << endl;
-    _getch();
+    _getch();                                                  //Pause program for user input to quit
 
     return 0;
 }
