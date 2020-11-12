@@ -51,15 +51,15 @@ void createPhoneRecord() {
 
     string name, price;
     int year, inventory;
-                                      //***Previous way of running the program. Does not use Objects***//
-    unique_ptr<Phone> phone = (new Phone);                      //***New way of running program, which uses a dynamic pointer object of the Phone class***//
+                                                                //***Previous way of running the program. Does not use Objects***//
+    unique_ptr<Phone> phone(new Phone);                         //***New way of running program, which uses a dynamic pointer object of the Phone class***//
 
     cout << "[+] Please provide the following information to update new phone records [+]";
 
     cout << "\nEnter Model Name: ";
     cin.ignore();
     getline(cin, name);
-    phone->setModel(name);             //Utilizes the Phone class methods to set & get attributes
+    phone->setModel(name);                                      //***Utilizes the Phone class methods to set & get attributes***//
     file << phone->getModel() << "\t";
     
     
@@ -94,7 +94,7 @@ void readPhoneRecord() {
        file.close();
     }
     else
-       cout << "[!] File Open Error!" << endl;
+       cout << "[!] File Open Error [!]" << endl;
 }
 
 void createPlanRecord() {
@@ -108,7 +108,7 @@ void createPlanRecord() {
     string name, price;
     int length;
     
-    Plan plan;                     //Create an object of the Plan class
+    Plan plan;                                   //***Create an object of the Plan class***//
 
     cout << "[+] Please provide the following information to update new Plan records [+]";
 
@@ -126,7 +126,7 @@ void createPlanRecord() {
     cout << "Enter Price: ";
     cin >> price;
     plan.setPrice(price);
-    file << plan.getPrice() << endl;            //Use the public methods for the plan object to set and get attributes
+    file << plan.getPrice() << endl;            //***Use the public methods for the plan object to set and get attributes***//
 
     file.close();
 }
@@ -141,7 +141,7 @@ void readPlanRecord() {
        file.close();
     }
     else
-       cout << "[!] File Open Error!" << endl;
+       cout << "[!] File Open Error [!]" << endl;
 }
 
 
@@ -168,9 +168,9 @@ void displayComparison()
         << setw(18) << "Inventory\n";
    cout << "------------------------------------------------------\n";
 
-   cout << iphonePro->getModel() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << "\t" << iphonePro->getInventory << endl;
-   cout << iphoneMini->getModel() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << "\t" << iphoneMini->getInventory << endl;
-   cout << galaxy->getModel() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << "\t" << galaxy->getInventory << endl;
+   cout << iphonePro->getModel() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << "\t" << iphonePro->getInventory() << endl;
+   cout << iphoneMini->getModel() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << "\t" << iphoneMini->getInventory() << endl;
+   cout << galaxy->getModel() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << "\t" << galaxy->getInventory() << endl;
 
    delete iphoneMini;
    delete iphonePro;                   //Clean up the dynamically allocated memory
@@ -226,7 +226,7 @@ int main(int argc, const char * argv[]) {
     {
         cout << "====================================================" << endl;
         cout << "\n<<< [+] Group 1 | Phones & Plans Console Program | [+] >>>";
-        cout << "\n\n[PLEASE SELECT FROM THE FOLLOWING CHOICES] \n";
+        cout << "\n\n[ PLEASE SELECT FROM THE FOLLOWING CHOICES ] \n";
 
         cout << "1. Enter New Phone Model Details (Admins ONLY)\n";
         cout << "2. Enter New Plan Details (Admins ONLY)\n";
@@ -250,12 +250,12 @@ int main(int argc, const char * argv[]) {
             break;
 
         default:
-            cout << "[!] Please make valid selection...";
+            cout << "[!] Please make valid selection [!]";
         }
     } while (*menuPtr != 4);
 
     cout << "[+] Press any key to continue..." << endl;
-    _getch();                                                  //Pause program for user input to quit
+    _getch();                                                                  //***Pause program for user input to quit***//
 
     return 0;
 }
