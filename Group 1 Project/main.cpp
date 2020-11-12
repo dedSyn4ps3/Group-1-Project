@@ -4,7 +4,7 @@
 //
 //  Created by Ed Rutherford on 11/03/20
 //  Group Members: Josh Morgan, James Finch, Fray Contreras, Marvin Parks
-//  Edited 11/11/2020
+//  Edited 11/12/2020
 
 #include <iostream>
 #include <fstream>
