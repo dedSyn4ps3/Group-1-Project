@@ -4,7 +4,7 @@
 //
 //  Created by Ed Rutherford on 11/03/20
 //  Group Members: Josh Morgan, James Finch, Fray Contreras, Marvin Parks
-//  Edited 11/12/2020
+//  Edited 11/13/2020
 
 #include <iostream>
 #include <fstream>
@@ -12,23 +12,23 @@
 #include <iomanip>
 #include <conio.h>
 #include <memory>
-//#include <Windows.h>
-#include <stdio.h>
+#include <Windows.h>
 
 #include "Phone.h"
 #include "Plan.h"
+
 
 using namespace std;
 
 const string phoneFile = "phoneList.csv";
 const string planFile = "planList.csv";
-/*
+
 void setColor(unsigned short color)
 {
-    HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);                ***This was the previous way of changing the console colors***
-    SetConsoleTextAttribute(hcon, color);                         ***But only works on Windows, new way should work on both *nix and Windows***
+    HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);                
+    SetConsoleTextAttribute(hcon, color);                         
 }
-*/
+
 bool openFile(fstream& file, string name)
 {
    file.open(name, ios::in);
@@ -62,7 +62,7 @@ void createPhoneRecord() {
                                                                 //***Previous way of running the program. Does not use Objects***//
     unique_ptr<Phone> phone(new Phone);                         //***New way of running program, which uses a dynamic pointer object of the Phone class***//
 
-    cout << "\033[32m[+] Please provide the following information to update new phone records [+]\033[0m" << endl;
+    cout << ""; setColor(10); cout << "[+] Please provide the following information to update new phone records[+]" << ""; setColor(7); cout << endl;
 
     cout << "\nEnter Model Name: ";
     cin.ignore();
@@ -88,7 +88,7 @@ void createPhoneRecord() {
 
     file.close();
 
-    cout << "[+] You entered the following information >>> \n";
+    cout << ""; setColor(10); cout << "[+] You entered the following information >>> \n" << ""; setColor(7); cout << endl;
     phone->displayPhoneData();
 }
 
@@ -102,7 +102,7 @@ void readPhoneRecord() {
        file.close();
     }
     else
-       cout << "\033[31m[!] \033[0mFile Open Error \033[31m[!]\033[0m" << endl;
+       cout << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << "File Open Error" << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << endl;
 }
 
 void createPlanRecord() {
@@ -230,17 +230,17 @@ int main(int argc, const char * argv[]) {
 
     *menuPtr = 0;
 
-    do                         //***Uses ASCII Escape Sequences to modify the color of the text***//
+    do                         //***Uses setColor function to modify the color of the text***//
     {
-        cout << "\033[32m================================================================\033[0m" << endl;
-        cout << "\n\033[33m<<< \033[35m[+] \033[36mGroup 1 \033[90m| \033[36mPhones & Plans Console Program \033[90m| \033[35m[+] \033[33m>>>\033[0m";
+        cout << ""; setColor(10); cout <<"================================================================" << ""; setColor(14); cout << endl;
+        cout << "\n" << ""; setColor(14); cout << "<<<" ""; setColor(5); cout << "[+]" << ""; setColor(11); cout << "Group 1" << ""; setColor(8); cout << "|" << ""; setColor(11); cout << "Phones & Plans Console Program"<< ""; setColor(8); cout << "|" << ""; setColor(5); cout << "[+]" << ""; setColor(14); cout << ">>>" << ""; setColor(7); cout << endl;
         cout << "\n\n[ PLEASE SELECT FROM THE FOLLOWING CHOICES ] \n";
 
         cout << "1. Enter New Phone Model Details (Admins ONLY)\n";
         cout << "2. Enter New Plan Details (Admins ONLY)\n";
         cout << "3. View Phone & Plan Prices vs Our Competitors\n";
         cout << "4. Exit Program\n\n";
-        cout << "\033[32m================================================================\033[0m" << endl;
+        cout << ""; setColor(10); cout << "================================================================" << ""; setColor(7); cout << endl;
 
         cin >> *menuPtr;
 
