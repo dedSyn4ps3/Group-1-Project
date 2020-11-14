@@ -262,7 +262,7 @@ int main(int argc, const char * argv[]) {
             break;
 
         default:
-            cout << "\033[31m[!] \033[0mPlease make valid selection \033[31m[!]\033[0m";
+       cout << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << "Please Make A Valid Choice" << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << endl;
         }
     } while (*menuPtr != 4);
 
