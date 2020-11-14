@@ -86,3 +86,4 @@ Group 1 Project/x64/Release/vc142.pdb
 /Group 1 Project/.vs/Group-1-Project/v16/Browse.VC.db-shm
 /Group 1 Project/.vs/Group-1-Project/v16/.suo
 /Group 1 Project/.vs/Group 1 Project/v16/ipch/AutoPCH/e224cd00fa5dcda1/MAIN.ipch
+*.exe
