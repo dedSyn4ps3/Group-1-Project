@@ -102,7 +102,9 @@ void readPhoneRecord() {
        file.close();
     }
     else
-       cout << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << "File Open Error" << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << endl;
+    {
+        cout << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << "File Open Error" << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << endl;
+    }
 }
 
 void createPlanRecord() {
@@ -149,7 +151,9 @@ void readPlanRecord() {
        file.close();
     }
     else
-       cout << "\033[31m[!] \033[0mFile Open Error \033[31m[!]\033[0m" << endl;
+    {
+        cout << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << "File Open Error" << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << endl;
+    }
 }
 
 
