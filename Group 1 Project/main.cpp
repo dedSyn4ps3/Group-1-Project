@@ -20,8 +20,8 @@
 
 using namespace std;
 
-const string phoneFile = "phoneList.csv";
-const string planFile = "planList.csv";
+const string phoneFile = "phoneList.txt";
+const string planFile = "planList.txt";
 
 void setColor(unsigned short color)
 {
