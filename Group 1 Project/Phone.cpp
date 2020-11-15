@@ -39,7 +39,7 @@ void Phone::displayPhoneData()
 	cout << setw(18) << "Model Name"
          << setw(18) << "Model Year" << setw(4)
          << setw(12)  << "Price\n";
-    cout << "-------------------------------------\n";
+    cout << "---------------------------------------------------\n";
 
 	cout << setw(18) << getModel();
     cout << setw(18)  << getReleaseYear();
