@@ -170,9 +170,9 @@ void displayComparison()
    //cout << "iPhone 12 Pro | 2020 | $1429.00" << endl;                       //***This was the old way, not using objects***//
    //cout << "iPhone 12 Mini | 2020 | $875.00" << endl;
 
-   Phone *iphonePro = new Phone("iPhone 12 Pro", 2020, "$1497.00", 120);
-   Phone *iphoneMini = new Phone("iPhone 12 Mini", 2020, "$1199.00", 95);
-   Phone *galaxy = new Phone("Samsung Galaxy S20 5G", 2020, "1199.00", 62);   //***New way; Utilizes Class Pointers***//
+   Phone *iphonePro = new Phone("iPhone 12 Pro", 2020, "$1497.00", 120, "6.1\"");
+   Phone *iphoneMini = new Phone("iPhone 12 Mini", 2020, "$1199.00", 95, "5.4\"");
+   Phone *galaxy = new Phone("Samsung Galaxy S20 5G", 2020, "1199.00", 62, "6.2\"");   //***New way; Utilizes Class Pointers***//
 
    cout << setw(18) << "Model Name"
         << setw(18) << "Model Year" << setw(8)

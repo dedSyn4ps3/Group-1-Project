@@ -3,7 +3,7 @@
 //  Group 1 Project
 //
 //  Created by Ed Rutherford on 11/3/20.
-//  Edited 11/14/2020
+//  Edited 11/20/2020
 
 #include "Phone.h"
 #include <iomanip>
@@ -45,7 +45,7 @@ void Phone::displayPhoneData()
     cout << setw(18)  << getReleaseYear();
     cout << setw(13)  << getPrice() << endl;
 
-	cout << "\n\nDEVICE SCREEN SIZE: " << screensize.print() << endl;            //***Calling the print function through screensize aggregation object***//
+	cout << "\n\nDEVICE SCREEN SIZE: " << screensize.getScreenSize() << endl;            //***Calling the print function through screensize aggregation object***//
 
 	cout << "\nCURRENT INVENTORY: " << inventory << endl;
 }

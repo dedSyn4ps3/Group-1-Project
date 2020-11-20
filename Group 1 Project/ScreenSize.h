@@ -25,10 +25,7 @@ public:
         this->screenSize = screenSize;
     }
 
-    void print() const
-    {
-        cout << "[+] Screen size of device: " << screenSize << endl;
-    }
+    string getScreenSize() { return screenSize; }
 };
 
 #endif

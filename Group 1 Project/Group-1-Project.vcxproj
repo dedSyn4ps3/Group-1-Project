@@ -107,6 +107,7 @@
     <ClInclude Include="Device.h" />
     <ClInclude Include="Phone.h" />
     <ClInclude Include="Plan.h" />
+    <ClInclude Include="ScreenSize.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

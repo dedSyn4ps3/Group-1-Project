@@ -20,12 +20,14 @@ class Device
 private:
 	string model, price;
 	int releaseYear;
-	ScreenSize screensize;                 //***ScreenSize object utilizing aggregation***//
 public:
 	//Constructor and Destructor
 	Device();
 	Device(string theModel, int theYear, string thePrice, string theScreenSize);
 	~Device();
+
+	ScreenSize screensize;                 //***ScreenSize object utilizing aggregation***//
+
 	
 	//Getters and Setters
 	string getModel(){return model;}
