@@ -24,7 +24,7 @@ private:
 public:
 	//Constructor and Destructor
 	Phone():Device() { inventory = 0; }
-	Phone(string phoneModel, int phoneReleaseYear, string phonePrice, int theInventory):Device(phoneModel, phoneReleaseYear, phonePrice) { inventory = theInventory; }
+	Phone(string phoneModel, int phoneReleaseYear, string phonePrice, int theInventory, string phoneScreenSize):Device(phoneModel, phoneReleaseYear, phonePrice, phoneScreenSize) { inventory = theInventory; }
 	~Phone();
 	
 	//Getters and Setters

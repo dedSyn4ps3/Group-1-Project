@@ -3,7 +3,7 @@
 //  Group 1 Project
 //
 //  Created by Ed Rutherford on 11/9/20.
-//  Edited 11/10/2020
+//  Edited 11/20/2020
 
 #include "Device.h"
 #include <iomanip>
@@ -17,12 +17,14 @@ Device::Device()
 	price = "$0.00";
 }
 
-Device::Device(string theModel, int theYear, string thePrice)
+Device::Device(string theModel, int theYear, string thePrice, string theScreenSize)
 {
 	cout << "[+] Param Device constructor is now running..." << endl;
 	model = theModel;
 	releaseYear = theYear;
 	price = thePrice;
+
+	screensize.set(theScreenSize);
 }
 
 //Define Destructor

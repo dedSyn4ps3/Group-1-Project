@@ -3,13 +3,15 @@
 //  Group 1 Project
 //
 //  Created by Ed Rutherford 11/9/20.
-//  Edited 11/10/2020
+//  Edited 11/20/2020
 
 #pragma once
 
 #include <iostream>
 #include <string>
 #include <iomanip>
+
+#include "ScreenSize.h"
 
 using namespace std;
 
@@ -18,10 +20,11 @@ class Device
 private:
 	string model, price;
 	int releaseYear;
+	ScreenSize screensize;                 //***ScreenSize object utilizing aggregation***//
 public:
 	//Constructor and Destructor
 	Device();
-	Device(string theModel, int theYear, string thePrice);
+	Device(string theModel, int theYear, string thePrice, string theScreenSize);
 	~Device();
 	
 	//Getters and Setters

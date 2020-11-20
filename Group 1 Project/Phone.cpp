@@ -45,5 +45,7 @@ void Phone::displayPhoneData()
     cout << setw(18)  << getReleaseYear();
     cout << setw(13)  << getPrice() << endl;
 
-	cout << "\n\nCURRENT INVENTORY: " << inventory << endl;
+	cout << "\n\nDEVICE SCREEN SIZE: " << screensize.print() << endl;            //***Calling the print function through screensize aggregation object***//
+
+	cout << "\nCURRENT INVENTORY: " << inventory << endl;
 }
