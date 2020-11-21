@@ -4,7 +4,7 @@
 //
 //  Created by Ed Rutherford on 11/03/20
 //  Group Members: Josh Morgan, James Finch, Fray Contreras, Marvin Parks
-//  Edited 11/14/2020
+//  Edited 11/20/2020
 
 #include <iostream>
 #include <fstream>
@@ -45,7 +45,6 @@ void showContent(fstream& file)
     while (getline(file, line)) 
     {
         cout << line << endl;
-
     }
 }
 
@@ -57,7 +56,7 @@ void createPhoneRecord() {
     // creates a new file
     file.open(phoneFile, ios::out | ios::app);
 
-    string name, price;
+    string name, price, screen;
     int year, inventory;
                                                                 //***Previous way of running the program. Does not use Objects***//
     unique_ptr<Phone> phone(new Phone);                         //***New way of running program, which uses a dynamic pointer object of the Phone class***//
@@ -70,6 +69,10 @@ void createPhoneRecord() {
     phone->setModel(name);                                      //***Utilizes the Phone class methods to set & get attributes***//
     file << phone->getModel() << "\t";
     
+    cout << "Enter Screen Size: ";
+    cin >> screen;
+    phone->screensize.set(screen);
+    file << phone->screensize.getScreenSize() << "\t";
     
     cout << "Enter Release Year: ";
     cin >> year;
@@ -175,14 +178,15 @@ void displayComparison()
    Phone *galaxy = new Phone("Samsung Galaxy S20 5G", 2020, "1199.00", 62, "6.2\"");   //***New way; Utilizes Class Pointers***//
 
    cout << setw(18) << "Model Name"
+        << setw(18) << "Screen Size" << setw(8)
         << setw(18) << "Model Year" << setw(8)
         << setw(12) << "Price" << setw(8)
         << setw(18) << "Inventory\n";
    cout << "------------------------------------------------------\n";
 
-   cout << iphonePro->getModel() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << "\t" << iphonePro->getInventory() << endl;
-   cout << iphoneMini->getModel() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << "\t" << iphoneMini->getInventory() << endl;
-   cout << galaxy->getModel() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << "\t" << galaxy->getInventory() << endl;
+   cout << iphonePro->getModel() << "\t" << iphonePro->screensize.getScreenSize() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << "\t" << iphonePro->getInventory() << endl;
+   cout << iphoneMini->getModel() << "\t" << iphoneMini->screensize.getScreenSize() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << "\t" << iphoneMini->getInventory() << endl;
+   cout << galaxy->getModel() << "\t" << galaxy->screensize.getScreenSize() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << "\t" << galaxy->getInventory() << endl;
 
    delete iphoneMini;
    delete iphonePro;                   //Clean up the dynamically allocated memory
