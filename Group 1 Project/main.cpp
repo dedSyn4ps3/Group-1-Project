@@ -67,22 +67,22 @@ void createPhoneRecord() {
     cin.ignore();
     getline(cin, name);
     phone->setModel(name);                                      //***Utilizes the Phone class methods to set & get attributes***//
-    file << phone->getModel() << "\t";
+    file << phone->getModel() << "\t\t\t";
     
     cout << "Enter Screen Size: ";
     cin >> screen;
     phone->screensize.set(screen);
-    file << phone->screensize.getScreenSize() << "\t";
+    file << phone->screensize.getScreenSize() << "\t\t\t";
     
     cout << "Enter Release Year: ";
     cin >> year;
     phone->setReleaseYear(year);
-    file << phone->getReleaseYear() << "\t";
+    file << phone->getReleaseYear() << "\t\t\t";
     
     cout << "Enter Price: ";
     cin >> price;
     phone->setPrice(price);
-    file << phone->getPrice() << "\t";
+    file << phone->getPrice() << "\t\t\t";
 
     cout << "Enter Inventory: ";
     cin >> inventory;
@@ -182,11 +182,11 @@ void displayComparison()
         << setw(18) << "Model Year" << setw(8)
         << setw(12) << "Price" << setw(8)
         << setw(18) << "Inventory\n";
-   cout << "------------------------------------------------------\n";
+   cout << "--------------------------------------------------------------------------------\n";
 
-   cout << iphonePro->getModel() << "\t" << iphonePro->screensize.getScreenSize() << "\t" << iphonePro->getReleaseYear() << "\t" << iphonePro->getPrice() << "\t" << iphonePro->getInventory() << endl;
-   cout << iphoneMini->getModel() << "\t" << iphoneMini->screensize.getScreenSize() << "\t" << iphoneMini->getReleaseYear() << "\t" << iphoneMini->getPrice() << "\t" << iphoneMini->getInventory() << endl;
-   cout << galaxy->getModel() << "\t" << galaxy->screensize.getScreenSize() << "\t" << galaxy->getReleaseYear() << "\t" << galaxy->getPrice() << "\t" << galaxy->getInventory() << endl;
+   cout << iphonePro->getModel() << "\t\t\t" << iphonePro->screensize.getScreenSize() << "\t\t\t" << iphonePro->getReleaseYear() << "\t\t\t" << iphonePro->getPrice() << "\t\t\t" << iphonePro->getInventory() << endl;
+   cout << iphoneMini->getModel() << "\t\t\t" << iphoneMini->screensize.getScreenSize() << "\t\t\t" << iphoneMini->getReleaseYear() << "\t\t\t" << iphoneMini->getPrice() << "\t\t\t" << iphoneMini->getInventory() << endl;
+   cout << galaxy->getModel() << "\t\t\t" << galaxy->screensize.getScreenSize() << "\t\t\t" << galaxy->getReleaseYear() << "\t\t\t" << galaxy->getPrice() << "\t\t\t" << galaxy->getInventory() << endl;
 
    delete iphoneMini;
    delete iphonePro;                   //Clean up the dynamically allocated memory

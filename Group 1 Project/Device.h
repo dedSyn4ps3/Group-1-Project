@@ -17,14 +17,14 @@ using namespace std;
 
 class Device
 {
-private:
+protected:
 	string model, price;
 	int releaseYear;
 public:
 	//Constructor and Destructor
 	Device();
 	Device(string theModel, int theYear, string thePrice, string theScreenSize);
-	~Device();
+	virtual ~Device();
 
 	ScreenSize screensize;                 //***ScreenSize object utilizing aggregation***//
 
@@ -38,4 +38,6 @@ public:
 	
 	string getPrice(){return price;}
 	void setPrice(string thePrice);
+
+	virtual void displayPhoneData();
 };

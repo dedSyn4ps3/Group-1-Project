@@ -22,28 +22,9 @@ void Phone::setInventory(int theInventory)
 		inventory = 0;
 }
 
-
 void Phone::displayPhoneData()
 {
-	//cout << "<<< DETAILS >>>\n" << endl;
-
-	//cout << "\nModel Name: " << getModel() << endl;
-
-	//cout << "\nModel Year: " << getReleaseYear() << endl;
-                                                                        //***Old way of printing data; Not very neat***//
-	//cout << fixed << setprecision(2);
-	//cout << "\nPhone Price: " << getPrice() << endl;
-
-	//cout << "\n\nCURRENT INVENTORY: " << inventory << endl;
-
-	cout << setw(18) << "Model Name"
-         << setw(18) << "Model Year" << setw(4)
-         << setw(12)  << "Price\n";
-    cout << "---------------------------------------------------\n";
-
-	cout << setw(18) << getModel();
-    cout << setw(18)  << getReleaseYear();
-    cout << setw(13)  << getPrice() << endl;
+	Device::displayPhoneData();
 
 	cout << "\n\nDEVICE SCREEN SIZE: " << screensize.getScreenSize() << endl;            //***Calling the print function through screensize aggregation object***//
 
