@@ -72,8 +72,8 @@ void Device::displayPhoneData()
 	//cout << "\n\nCURRENT INVENTORY: " << inventory << endl;
 
 	cout << setw(18) << "Model Name"
-		<< setw(18) << "Model Year" << setw(4)
-		<< setw(12) << "Price\n";
+		 << setw(18) << "Model Year" << setw(4)
+		 << setw(12) << "Price\n";
 	cout << "---------------------------------------------------\n";
 
 	cout << setw(18) << getModel();

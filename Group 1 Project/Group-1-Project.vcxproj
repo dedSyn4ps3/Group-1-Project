@@ -102,12 +102,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Phone.cpp" />
     <ClCompile Include="Plan.cpp" />
+    <ClCompile Include="Tablet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Device.h" />
     <ClInclude Include="Phone.h" />
     <ClInclude Include="Plan.h" />
     <ClInclude Include="ScreenSize.h" />
+    <ClInclude Include="Tablet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

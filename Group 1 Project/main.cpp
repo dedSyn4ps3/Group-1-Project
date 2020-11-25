@@ -4,7 +4,7 @@
 //
 //  Created by Ed Rutherford on 11/03/20
 //  Group Members: Josh Morgan, James Finch, Fray Contreras, Marvin Parks
-//  Edited 11/20/2020
+//  Edited 11/25/2020
 
 #include <iostream>
 #include <fstream>
@@ -16,12 +16,14 @@
 
 #include "Phone.h"
 #include "Plan.h"
+#include "Tablet.h"
 
 
 using namespace std;
 
 const string phoneFile = "phoneList.txt";
 const string planFile = "planList.txt";
+const string tabletFile = "tabletList.txt";
 
 void setColor(unsigned short color)
 {
@@ -91,7 +93,7 @@ void createPhoneRecord() {
 
     file.close();
 
-    cout << ""; setColor(10); cout << "[+] You entered the following information >>> \n" << ""; setColor(7); cout << endl;
+    cout << ""; setColor(3); cout << "[+] You entered the following information >>> \n" << ""; setColor(7); cout << endl;
     phone->displayPhoneData();
 }
 
@@ -129,12 +131,12 @@ void createPlanRecord() {
     cin.ignore();
     getline(cin, name);
     plan.setName(name);
-    file << plan.getName() << "\t";
+    file << plan.getName() << "\t\t\t";
 
     cout << "\nEnter Contract Length: ";
     cin >> length;
     plan.setContractLength(length);
-    file << plan.getContractLength() << "\t";
+    file << plan.getContractLength() << "\t\t\t";
     
     cout << "Enter Price: ";
     cin >> price;
@@ -159,6 +161,67 @@ void readPlanRecord() {
     }
 }
 
+void createTabletRecord() {
+
+    // file pointer
+    fstream file;
+
+    // creates a new file
+    file.open(tabletFile, ios::out | ios::app);
+
+    string name, price, screen;
+    int year, inventory;
+                                                                   //***Previous way of running the program. Does not use Objects***//
+    unique_ptr<Tablet> tablet(new Tablet);                         //***New way of running program, which uses a dynamic pointer object of the Tablet class***//
+
+    cout << ""; setColor(10); cout << "[+] Please provide the following information to update new tablet records [+]" << ""; setColor(7); cout << endl;
+
+    cout << "\nEnter Model Name: ";
+    cin.ignore();
+    getline(cin, name);
+    tablet->setModel(name);                                      //***Utilizes the Tablet class methods to set & get attributes***//
+    file << tablet->getModel() << "\t\t\t";
+
+    cout << "Enter Screen Size: ";
+    cin >> screen;
+    tablet->screensize.set(screen);
+    file << tablet->screensize.getScreenSize() << "\t\t\t";
+
+    cout << "Enter Release Year: ";
+    cin >> year;
+    tablet->setReleaseYear(year);
+    file << tablet->getReleaseYear() << "\t\t\t";
+
+    cout << "Enter Price: ";
+    cin >> price;
+    tablet->setPrice(price);
+    file << tablet->getPrice() << "\t\t\t";
+
+    cout << "Enter Inventory: ";
+    cin >> inventory;
+    tablet->setInventory(inventory);
+    file << tablet->getInventory() << endl;
+
+    file.close();
+
+    cout << ""; setColor(3); cout << "[+] You entered the following information >>> \n" << ""; setColor(7); cout << endl;
+    tablet->displayTabletData();
+}
+
+void readTabletRecord() {
+
+    fstream file;
+
+    if (openFile(file, tabletFile))
+    {
+        showContent(file);
+        file.close();
+    }
+    else
+    {
+        cout << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << "File Open Error" << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << endl;
+    }
+}
 
 
 void displayComparison()
@@ -184,9 +247,9 @@ void displayComparison()
         << setw(18) << "Inventory\n";
    cout << "--------------------------------------------------------------------------------\n";
 
-   cout << iphonePro->getModel() << "\t\t\t" << iphonePro->screensize.getScreenSize() << "\t\t\t" << iphonePro->getReleaseYear() << "\t\t\t" << iphonePro->getPrice() << "\t\t\t" << iphonePro->getInventory() << endl;
-   cout << iphoneMini->getModel() << "\t\t\t" << iphoneMini->screensize.getScreenSize() << "\t\t\t" << iphoneMini->getReleaseYear() << "\t\t\t" << iphoneMini->getPrice() << "\t\t\t" << iphoneMini->getInventory() << endl;
-   cout << galaxy->getModel() << "\t\t\t" << galaxy->screensize.getScreenSize() << "\t\t\t" << galaxy->getReleaseYear() << "\t\t\t" << galaxy->getPrice() << "\t\t\t" << galaxy->getInventory() << endl;
+   cout << iphonePro->getModel() << "\t" << iphonePro->screensize.getScreenSize() << "\t\t" << iphonePro->getReleaseYear() << "\t\t\t" << iphonePro->getPrice() << "\t\t\t" << iphonePro->getInventory() << endl;
+   cout << iphoneMini->getModel() << "\t" << iphoneMini->screensize.getScreenSize() << "\t\t" << iphoneMini->getReleaseYear() << "\t\t\t" << iphoneMini->getPrice() << "\t\t\t" << iphoneMini->getInventory() << endl;
+   cout << galaxy->getModel() << "\t" << galaxy->screensize.getScreenSize() << "\t\t" << galaxy->getReleaseYear() << "\t\t\t" << galaxy->getPrice() << "\t\t\t" << galaxy->getInventory() << endl;
 
    delete iphoneMini;
    delete iphonePro;                   //Clean up the dynamically allocated memory
@@ -245,9 +308,10 @@ int main(int argc, const char * argv[]) {
         cout << "\n\n[ PLEASE SELECT FROM THE FOLLOWING CHOICES ] \n";
 
         cout << "1. Enter New Phone Model Details (Admins ONLY)\n";
-        cout << "2. Enter New Plan Details (Admins ONLY)\n";
-        cout << "3. View Phone & Plan Prices vs Our Competitors\n";
-        cout << "4. Exit Program\n\n";
+        cout << "2. Enter New Tablet Model Details (Admins ONLY)\n";
+        cout << "3. Enter New Plan Details (Admins ONLY)\n";
+        cout << "4. View Phone & Plan Prices vs Our Competitors\n";
+        cout << "5. Exit Program\n\n";
         cout << ""; setColor(10); cout << "================================================================" << ""; setColor(7); cout << endl;
 
         cin >> *menuPtr;
@@ -257,18 +321,21 @@ int main(int argc, const char * argv[]) {
             createPhoneRecord();
             break;
         case 2:
+            createTabletRecord();
+            break;
+        case 3:
             createPlanRecord();
             break;
-         case 3:
+         case 4:
             displayComparison();
             break;
-        case 4:
+        case 5:
             break;
 
         default:
        cout << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << "Please Make A Valid Choice" << ""; setColor(12); cout << "[!]" << ""; setColor(7); cout << endl;
         }
-    } while (*menuPtr != 4);
+    } while (*menuPtr != 5);
 
     cout << "[+] Press any key to continue..." << endl;
     _getch();                                                                  //***Pause program for user input to quit***//
