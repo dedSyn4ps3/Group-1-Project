@@ -39,5 +39,5 @@ public:
 	string getPrice(){return price;}
 	void setPrice(string thePrice);
 
-	virtual void displayPhoneData();
+	virtual void displayDeviceData();
 };

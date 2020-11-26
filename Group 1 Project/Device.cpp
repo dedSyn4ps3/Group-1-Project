@@ -58,7 +58,7 @@ void Device::setPrice(string thePrice)
 		price = "$0.00";
 }
 
-void Device::displayPhoneData()
+void Device::displayDeviceData()
 {
 	//cout << "<<< DETAILS >>>\n" << endl;
 

@@ -24,7 +24,7 @@ void Phone::setInventory(int theInventory)
 
 void Phone::displayPhoneData()
 {
-	Device::displayPhoneData();
+	Device::displayDeviceData();
 
 	cout << "\n\nDEVICE SCREEN SIZE: " << screensize.getScreenSize() << endl;            //***Calling the print function through screensize aggregation object***//
 
