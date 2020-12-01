@@ -8,3 +8,5 @@ This will allow us to professionally document any changes made to a particular f
 any issues that may need to be addressed.
 
 <b>If we all manage to at least contribute small parts to this project, we shouldn'y have any problems designing an awesome, intuitive program that will be able to do anything we need it to!</b>
+
+## The MacOS version of this repo for Mac and Linux machines can be found at https://github.com/dedSyn4ps3/Group-Project-OSX
