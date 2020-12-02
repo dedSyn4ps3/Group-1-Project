@@ -84,7 +84,7 @@ void createPhoneRecord() {
     cout << "Enter Price: ";
     cin >> price;
     phone->setPrice(price);
-    file << phone->getPrice() << "\t\t\t";
+    file << phone->getPrice() << "\t\t\t\t";
 
     cout << "Enter Inventory: ";
     cin >> inventory;
@@ -94,7 +94,7 @@ void createPhoneRecord() {
     file.close();
 
     cout << ""; setColor(3); cout << "[+] You entered the following information >>> \n" << ""; setColor(7); cout << endl;
-    phone->displayPhoneData();
+    phone->displayData();
 }
 
 void readPhoneRecord() {
@@ -205,7 +205,7 @@ void createTabletRecord() {
     file.close();
 
     cout << ""; setColor(3); cout << "[+] You entered the following information >>> \n" << ""; setColor(7); cout << endl;
-    tablet->displayTabletData();
+    tablet->displayData();
 }
 
 void readTabletRecord() {
@@ -229,6 +229,7 @@ void displayComparison()
    //Our phone prices
    cout << "\n[+] OUR PRICES [+]\n" << endl;
    readPhoneRecord();
+   readTabletRecord();
 
    //Competitors prices
    cout << "\n\n[-] THEIR PRICES [-]\n" << endl;
@@ -240,16 +241,16 @@ void displayComparison()
    Phone *iphoneMini = new Phone("iPhone 12 Mini", 2020, "$1199.00", 95, "5.4\"");
    Phone *galaxy = new Phone("Samsung Galaxy S20 5G", 2020, "1199.00", 62, "6.2\"");   //***New way; Utilizes Class Pointers***//
 
-   cout << setw(18) << "Model Name"
-        << setw(18) << "Screen Size" << setw(8)
-        << setw(18) << "Model Year" << setw(8)
-        << setw(12) << "Price" << setw(8)
-        << setw(18) << "Inventory\n";
-   cout << "--------------------------------------------------------------------------------\n";
+   cout << setw(16) << "Model Name"
+        << setw(20) << "Screen Size" << setw(8)
+        << setw(19) << "Model Year" << setw(23)
+        << setw(19) << "Price" << setw(23)
+        << setw(24) << "Inventory\n";
+   cout << "---------------------------------------------------------------------------------------------------\n";
 
-   cout << iphonePro->getModel() << "\t" << iphonePro->screensize.getScreenSize() << "\t\t" << iphonePro->getReleaseYear() << "\t\t\t" << iphonePro->getPrice() << "\t\t\t" << iphonePro->getInventory() << endl;
-   cout << iphoneMini->getModel() << "\t" << iphoneMini->screensize.getScreenSize() << "\t\t" << iphoneMini->getReleaseYear() << "\t\t\t" << iphoneMini->getPrice() << "\t\t\t" << iphoneMini->getInventory() << endl;
-   cout << galaxy->getModel() << "\t" << galaxy->screensize.getScreenSize() << "\t\t" << galaxy->getReleaseYear() << "\t\t\t" << galaxy->getPrice() << "\t\t\t" << galaxy->getInventory() << endl;
+   cout << iphonePro->getModel() << "\t\t\t" << iphonePro->screensize.getScreenSize() << "\t\t" << iphonePro->getReleaseYear() << "\t\t" << iphonePro->getPrice() << "\t\t" << iphonePro->getInventory() << endl;
+   cout << iphoneMini->getModel() << "\t\t\t" << iphoneMini->screensize.getScreenSize() << "\t\t" << iphoneMini->getReleaseYear() << "\t\t" << iphoneMini->getPrice() << "\t\t" << iphoneMini->getInventory() << endl;
+   cout << galaxy->getModel() << "\t\t" << galaxy->screensize.getScreenSize() << "\t\t" << galaxy->getReleaseYear() << "\t\t" << galaxy->getPrice() << "\t\t\t" << galaxy->getInventory() << endl;
 
    delete iphoneMini;
    delete iphonePro;                   //Clean up the dynamically allocated memory
@@ -259,8 +260,8 @@ void displayComparison()
    //Our plan prices
    cout << "\n[+] OUR PLANS [+]\n" << endl;
 
-   cout << setw(18) << "Plan Name"
-        << setw(26) << "Contract Length(Years)" << setw(8)
+   cout << setw(10) << "Plan Name"
+        << setw(30) << "Contract Length(Years)" << setw(8)
         << setw(12)  << "Price\n";
    cout << "------------------------------------------------------\n";
    
@@ -282,15 +283,15 @@ void displayComparison()
    };
    
    cout << setw(18) << "Plan Name"
-        << setw(26) << "Contract Length(Years)" << setw(8)
+        << setw(36) << "Contract Length(Years)" << setw(8)
         << setw(12) << "Price\n";
-   cout << "-------------------------------------------------------\n";
+   cout << "-------------------------------------------------------------------\n";
 
    for (int i = 0; i < NUM_PLANS; i++)
    {
-       cout << setw(18) << plan[i].getName();
-       cout << setw(26) << plan[i].getContractLength();
-       cout << setw(13) << plan[i].getPrice() << endl;
+       cout << setw(20) << plan[i].getName();
+       cout << setw(30) << plan[i].getContractLength();
+       cout << setw(16) << plan[i].getPrice() << endl;
    }
 }
 
@@ -305,7 +306,7 @@ int main(int argc, const char * argv[]) {
     {
         cout << ""; setColor(10); cout <<"================================================================" << ""; setColor(14); cout << endl;
         cout << "\n" << ""; setColor(14); cout << "<<<" ""; setColor(5); cout << "[+]" << ""; setColor(11); cout << "Group 1" << ""; setColor(8); cout << "|" << ""; setColor(11); cout << "Phones & Plans Console Program"<< ""; setColor(8); cout << "|" << ""; setColor(5); cout << "[+]" << ""; setColor(14); cout << ">>>" << ""; setColor(7); cout << endl;
-        cout << "\n\n[ PLEASE SELECT FROM THE FOLLOWING CHOICES ] \n";
+        cout << ""; setColor(14); cout << "\n\n[ PLEASE SELECT FROM THE FOLLOWING CHOICES ] \n\n" << ""; setColor(7); cout << endl;
 
         cout << "1. Enter New Phone Model Details (Admins ONLY)\n";
         cout << "2. Enter New Tablet Model Details (Admins ONLY)\n";

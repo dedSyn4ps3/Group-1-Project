@@ -36,5 +36,5 @@ public:
   string getPrice(){return price;}
   void setPrice(string thePrice);
 
-  void displayPlanData();
+  void displayData();
 };

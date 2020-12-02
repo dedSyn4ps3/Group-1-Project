@@ -31,5 +31,5 @@ public:
 	int getInventory(){return inventory;}
 	void setInventory(int theInventory) { inventory = theInventory; }
 		
-	void displayTabletData();
+	void displayData();
 };

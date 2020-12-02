@@ -56,7 +56,7 @@ void Plan::setPrice(string thePrice)
 		price = "$0.00";
 }
 
-void Plan::displayPlanData()
+void Plan::displayData()
 {
 	cout << "<<< DETAILS >>>" << endl;
 

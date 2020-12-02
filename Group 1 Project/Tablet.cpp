@@ -13,9 +13,9 @@
 Tablet::~Tablet(){}
 
 
-void Tablet::displayTabletData()
+void Tablet::displayData()
 {
-	Device::displayDeviceData();
+	Device::displayData();
 
 	cout << "\n\nDEVICE SCREEN SIZE: " << screensize.getScreenSize() << endl;            //***Calling the print function through screensize aggregation object***//
 
