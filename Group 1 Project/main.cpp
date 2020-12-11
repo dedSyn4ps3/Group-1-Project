@@ -262,8 +262,8 @@ void displayComparison()
 
    cout << setw(10) << "Plan Name"
         << setw(30) << "Contract Length(Years)" << setw(8)
-        << setw(12)  << "Price\n";
-   cout << "------------------------------------------------------\n";
+        << setw(32)  << "Price\n";
+   cout << "------------------------------------------------------------------------\n";
    
    readPlanRecord();
 
