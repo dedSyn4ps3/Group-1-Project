@@ -1,9 +1,11 @@
-//
-//  Tablet.h
-//  Group 1 Project
-//
-//  Created by Marvin Parks 11/14/2020.
-//  Edited by Ed Rutherford on 11/25/20.
+/*
+    Tablet.h
+    Group 1 Project
+
+    Created by Marvin Parks 11/14/2020.
+    Edited by Ed Rutherford on 11/25/20.
+	Edited by Joshua Morgan on 12/13/20.
+*/
 
 #pragma once
 
@@ -29,7 +31,7 @@ public:
 	
 	//Getters and Setters
 	int getInventory(){return inventory;}
-	void setInventory(int theInventory) { inventory = theInventory; }
+	void setInventory(int theInventory);
 		
 	void displayData();
 };

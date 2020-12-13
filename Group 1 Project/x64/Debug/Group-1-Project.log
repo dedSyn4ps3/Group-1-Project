@@ -1,6 +1,5 @@
-﻿  Device.cpp
-  main.cpp
-  Phone.cpp
-  Plan.cpp
+﻿  main.cpp
+  Tablet.cpp
   Generating Code...
-  Group-1-Project.vcxproj -> C:\Users\x00Sy\OneDrive\Documents\GitHub\Group Project\Group 1 Project\x64\Debug\Group-1-Project.exe
+  LINK : C:\Users\palad\OneDrive\Documents\GitHub\Group-1-Project\Group 1 Project\x64\Debug\Group-1-Project.exe not found or not built by the last incremental link; performing full link
+  Group-1-Project.vcxproj -> C:\Users\palad\OneDrive\Documents\GitHub\Group-1-Project\Group 1 Project\x64\Debug\Group-1-Project.exe
